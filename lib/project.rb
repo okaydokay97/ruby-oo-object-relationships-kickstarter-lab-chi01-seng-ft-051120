@@ -13,7 +13,7 @@ class Project
     ProjectBacker.all.find_all do |each_backer|
       each_backer.project == self
       
-        all_backers << each_backer.backer
+        
       end
     end
     all_backers
