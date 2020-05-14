@@ -10,12 +10,14 @@ class Project
   end 
   
   def backers
-    ProjectBacker.all.find_all do |pb|
-      pb.project == self
-        pb.map do |pb|
-          pb.backer
-        end
+    all_backers = [] 
+    ProjectBacker.all.find_all do |each_backer|
+      if each_backer.project == self
+        all_backers << each_backer.backer
       end
+    end
+    all_backers
   end
+  
   
 end
