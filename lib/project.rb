@@ -13,11 +13,9 @@ class Project
     ProjectBacker.all.find_all do |each_backer|
       each_backer.project == self
       
-        
-      end
+        project_backers.map do |pb|
+            pb.backer
+        end
     end
-    all_backers
-  end
-  
   
 end
