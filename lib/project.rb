@@ -11,7 +11,7 @@ class Project
   
   def backers
     ProjectBacker.all.find_all do |each_backer|
-      if each_backer.project == self
+      each_backer.project == self
         all_backers << each_backer.backer
       end
     end
